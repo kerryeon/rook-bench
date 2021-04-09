@@ -5,11 +5,12 @@ FROM ubuntu:20.04 AS target
 RUN apt-get update && apt-get install -y \
     curl \
     openjdk-8-jdk \
-    unzip &&\
+    unzip \
+    vim &&\
     rm -rf /var/lib/apt/lists/*
 
 ## Set app directory.
-ENV APP_DIR=/opt/app
+WORKDIR /opt/app
 
 ## Add the files to the image.
 ADD ./vdbench*.zip ./script.conf ./
@@ -18,4 +19,4 @@ ADD ./vdbench*.zip ./script.conf ./
 RUN unzip -q vdbench*.zip &&\
     rm vdbench*.zip
 
-CMD ["vdbench"]
+CMD ["./vdbench", "-f", "script.conf", "-o", "output"]
