@@ -1,0 +1,33 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vdbench
+spec:
+  template:
+    metadata:
+      name: vdbench
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: vdbench
+          image: openebs/tests-vdbench
+          volumeMounts:
+            - mountPath: /mnt/bench
+              name: vdbench-vol
+      volumes:
+        - name: vdbench-vol
+          persistentVolumeClaim:
+            claimName: vdbench-vol-claim
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: vdbench-vol-claim
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: "32G"
