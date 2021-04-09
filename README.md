@@ -7,8 +7,3 @@ Simple [Rook]() benckmark pod with [vdbench](https://www.oracle.com/downloads/se
 ``` bash
 $ kubectl create -f https://raw.githubusercontent.com/kerryeon/rook-bench/master/rook-bench.yaml
 ```
-
-## License
-
-We only license files published on git.
-For more information on licensing, [please refer to the file](LICENSE).
