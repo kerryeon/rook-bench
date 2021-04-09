@@ -1,0 +1,5 @@
+# Manually licensed files
+/vdbench*.zip
+
+# Editor
+/.vscode/
