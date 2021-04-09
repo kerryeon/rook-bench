@@ -11,7 +11,8 @@ spec:
       restartPolicy: Never
       containers:
         - name: vdbench
-          image: kerryeon/rook-bench
+          image: rook-bench:latest
+          imagePullPolicy: Never
           volumeMounts:
             - mountPath: /mnt/bench
               name: vdbench-vol
