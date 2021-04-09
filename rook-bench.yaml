@@ -9,7 +9,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: "32G"
+      storage: "64G"
 ---
 apiVersion: batch/v1
 kind: Job
