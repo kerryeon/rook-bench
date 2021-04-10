@@ -2,14 +2,242 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: vdbench-pvc-claim
+  name: vdbench-pvc-claim-1
 spec:
   storageClassName: rook-ceph-block
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Ti
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-2
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-3
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-4
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-5
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-6
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-7
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-8
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-9
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-10
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-11
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-12
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-13
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-14
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-15
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-16
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-17
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-18
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-19
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vdbench-pvc-claim-20
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
 ---
 apiVersion: batch/v1
 kind: Job
@@ -24,10 +252,107 @@ spec:
       containers:
         - name: vdbench
           image: kerryeon/rook-bench
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
           volumeMounts:
-            - name: vdbench-vol
-              mountPath: /mnt/bench
+            - name: vdbench-vol-1
+              mountPath: /mnt/bench1
+            - name: vdbench-vol-2
+              mountPath: /mnt/bench2
+            - name: vdbench-vol-3
+              mountPath: /mnt/bench3
+            - name: vdbench-vol-4
+              mountPath: /mnt/bench4
+            - name: vdbench-vol-5
+              mountPath: /mnt/bench5
+            - name: vdbench-vol-6
+              mountPath: /mnt/bench6
+            - name: vdbench-vol-7
+              mountPath: /mnt/bench7
+            - name: vdbench-vol-8
+              mountPath: /mnt/bench8
+            - name: vdbench-vol-9
+              mountPath: /mnt/bench9
+            - name: vdbench-vol-10
+              mountPath: /mnt/bench10
+            - name: vdbench-vol-11
+              mountPath: /mnt/bench11
+            - name: vdbench-vol-12
+              mountPath: /mnt/bench12
+            - name: vdbench-vol-13
+              mountPath: /mnt/bench13
+            - name: vdbench-vol-14
+              mountPath: /mnt/bench14
+            - name: vdbench-vol-15
+              mountPath: /mnt/bench15
+            - name: vdbench-vol-16
+              mountPath: /mnt/bench16
+            - name: vdbench-vol-17
+              mountPath: /mnt/bench17
+            - name: vdbench-vol-18
+              mountPath: /mnt/bench18
+            - name: vdbench-vol-19
+              mountPath: /mnt/bench19
+            - name: vdbench-vol-20
+              mountPath: /mnt/bench20
       volumes:
-        - name: vdbench-vol
+        - name: vdbench-vol-1
           persistentVolumeClaim:
-            claimName: vdbench-pvc-claim
+            claimName: vdbench-pvc-claim-1
+        - name: vdbench-vol-2
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-2
+        - name: vdbench-vol-3
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-3
+        - name: vdbench-vol-4
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-4
+        - name: vdbench-vol-5
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-5
+        - name: vdbench-vol-6
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-6
+        - name: vdbench-vol-7
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-7
+        - name: vdbench-vol-8
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-8
+        - name: vdbench-vol-9
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-9
+        - name: vdbench-vol-10
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-10
+        - name: vdbench-vol-11
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-11
+        - name: vdbench-vol-12
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-12
+        - name: vdbench-vol-13
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-13
+        - name: vdbench-vol-14
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-14
+        - name: vdbench-vol-15
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-15
+        - name: vdbench-vol-16
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-16
+        - name: vdbench-vol-17
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-17
+        - name: vdbench-vol-18
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-18
+        - name: vdbench-vol-19
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-19
+        - name: vdbench-vol-20
+          persistentVolumeClaim:
+            claimName: vdbench-pvc-claim-20

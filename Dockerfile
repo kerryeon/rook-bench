@@ -13,10 +13,10 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /opt/app
 
 ## Add the files to the image.
-ADD ./vdbench*.zip ./script.conf ./
+ADD ./vdbench*.zip ./script.ini ./
 
 ## Unzip the vdbench files
 RUN unzip -q vdbench*.zip &&\
     rm vdbench*.zip
 
-CMD ["./vdbench", "-f", "script.conf", "-o", "output"]
+CMD ["./vdbench", "-f", "script.ini", "-o", "output"]
